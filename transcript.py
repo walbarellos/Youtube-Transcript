@@ -48,7 +48,7 @@ if __name__ == "__main__":
         frases = agrupar_por_frase(transcript)
 
         # Palavras a destacar (adicione outras conforme necessário)
-        palavras_chave = ["Deus", "Jesus", "Messias", "Israel", "profecia", "tempo", "salvação", "verdade"]
+        palavras_chave = ["CHANGE THIS", "Torah", "CHANGE THIS", "Israel", "CHANGE THIS", "CHANGE THIS", "CHANGE THIS", "CHANGE THIS"]
 
         print("\n\033[1;34mTranscrição (frases agrupadas):\033[0m\n")
         print_frases_coloridas(frases[:10], palavras_chave)  # Mostra 10 primeiras para não explodir o terminal

@@ -1,5 +1,5 @@
 # 📖 Leia-me - Transcrição do YouTube com destaque e exportação
-
+# Arquivos beta são as últimas atualizações e implementações. (Versão estável é uma versão antigo, porém estável) - Aconselho testar beta antes.
 ## 📝 Objetivo
 
 Este script Python captura as legendas de um vídeo do YouTube usando a API de transcrição automática, agrupa as legendas em frases mais legíveis, destaca palavras-chave com cores no terminal e exporta a transcrição para um arquivo `.txt` formatado.

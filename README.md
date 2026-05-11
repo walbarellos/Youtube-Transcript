@@ -1,54 +1,24 @@
-# 📖 Leia-me - Transcrição do YouTube com destaque e exportação
-# Arquivos beta são as últimas atualizações e implementações. (Versão estável é uma versão antigo, porém estável) - Aconselho testar beta antes.
-## 📝 Objetivo
+# Transcrição do YouTube
 
-Este script Python captura as legendas de um vídeo do YouTube usando a API de transcrição automática, agrupa as legendas em frases mais legíveis, destaca palavras-chave com cores no terminal e exporta a transcrição para um arquivo `.txt` formatado.
+Script Python para extrair legendas de vídeos do YouTube, agrupar em frases legíveis e exportar para `.txt`.
 
-## 🛠 Pré-requisitos
+## Uso
 
-Antes de rodar o programa, você precisará de:
+```bash
+source .venv/bin/activate
+python transcript.py
+```
 
-* **Python 3.x instalado.** (Certifique-se de ter a versão mais recente do Python instalada no seu sistema).
-* **Dependências do projeto:**
-* `youtube-transcript-api` (para acessar as transcrições dos vídeos do YouTube)
+Cole a URL do vídeo quando solicitado.
 
-Para instalar as dependências, execute:
+## Dependências
 
 ```bash
 pip install youtube-transcript-api
 ```
 
-Execute o script:
+## Formato de Saída
 
-Após instalar as dependências, basta rodar o script com o seguinte comando no terminal:
-
-```bash
-python transcript.py
-```
-
-Forneça a URL do vídeo do YouTube:
-
-Após rodar o script, será solicitado para que você cole a URL do vídeo do YouTube, algo como:
-
-```bash
-Cole a URL do vídeo do YouTube: https://www.youtube.com/watch?v=example
-```
-
-
-⚠ Limitações
-
-    O script depende das legendas automáticas do YouTube, o que significa que a qualidade da transcrição pode variar.
-
-    O script não realiza correções automáticas nas transcrições (como remoção de palavras erradas ou não capturadas).
-
-    Caso o vídeo não tenha legendas, o programa exibirá uma mensagem de erro.
-
-
-💡 Possíveis Melhorias Futuras
-    
-    Suporte para múltiplos idiomas.
-
-    Resumo automático das transcrições.
-
-    Integração com sistemas de recomendação para vídeos baseados em palavras-chave.
-
+- Frases agrupadas por pontuação
+- Keywords destacadas em cores no terminal
+- Arquivo `.txt` salvo com o ID do vídeo

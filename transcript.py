@@ -16,20 +16,9 @@ def get_video_id(url):
 def get_transcript(video_url):
     try:
         video_id = get_video_id(video_url)
-        transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
-        transcript = transcript_list.find_generated_transcript(['pt', 'pt-BR', 'en'])
-        fetched_transcript = transcript.fetch()
+        ytt_api = YouTubeTranscriptApi()
+        fetched_transcript = ytt_api.list(video_id).find_generated_transcript(['pt', 'pt-BR', 'en']).fetch()
 
-        print("\n\033[1;35m--- Inspeção do objeto fetched_transcript (primeiro item) ---\033[0m")
-        if fetched_transcript:
-            print(type(fetched_transcript[0]))
-            print(fetched_transcript[0])
-        else:
-            print("\033[1;31mfetched_transcript está vazio.\033[0m")
-            return None, None
-        print("\033[1;35m--- Fim da inspeção ---\033[0m\n")
-
-        # Tentar acessar o texto de forma mais robusta
         transcript_text = []
         for item in fetched_transcript:
             if hasattr(item, 'text'):
@@ -73,11 +62,10 @@ if __name__ == "__main__":
     if transcript_data:
         frases = agrupar_por_frase(transcript_data)
 
-        # Palavras a destacar (adicione ou remova conforme necessário)
         palavras_chave = ["mencionar", "exemplo", "importante", "atenção", "análise"]
 
         print("\n\033[1;34mTranscrição (frases agrupadas e destacadas):\033[0m\n")
-        print_frases_coloridas(frases[:20], palavras_chave) # Mostra as 20 primeiras frases
+        print_frases_coloridas(frases[:20], palavras_chave)
 
         salvar_txt_limpo(frases, video_id)
     else:
